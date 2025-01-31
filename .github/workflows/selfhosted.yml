@@ -507,19 +507,19 @@ jobs:
         fi && \
 
        (cd system/core && \
-       git remote add rising https://github.com/RisingTechOSS/android_system_core && \
+       git remote add crdroid https://github.com/crdroidandroid/android_system_core && \
        git config pull.rebase true && \
-       git pull rising thirteen) && \
+       git pull crdroid 13.0) && \
        
        (cd frameworks/base && \
-       git remote add rising https://github.com/RisingTechOSS/android_frameworks_base && \
+       git remote add crdroid https://github.com/crdroidandroid/android_frameworks_base && \
        git config pull.rebase true && \
-       git pull rising thirteen) && \
+       git pull crdroid 13.0) && \
        
        (cd frameworks/native && \
-       git remote add rising https://github.com/RisingTechOSS/android_frameworks_native && \
+       git remote add crdroid https://github.com/crdroidandroid/android_frameworks_native && \
        git config pull.rebase true && \
-       git pull rising thirteen) && \
+       git pull crdroid 13.0) && \
 
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
