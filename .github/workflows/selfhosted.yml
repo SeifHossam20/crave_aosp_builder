@@ -506,6 +506,21 @@ jobs:
           /opt/crave/resync.sh
         fi && \
 
+       (cd system/core && \
+       git remote add rising https://github.com/RisingTechOSS/android_system_core && \
+       git config pull.rebase true && \
+       git pull rising thirteen) && \
+       
+       (cd frameworks/base && \
+       git remote add rising https://github.com/RisingTechOSS/android_frameworks_base && \
+       git config pull.rebase true && \
+       git pull rising thirteen) && \
+       
+       (cd frameworks/native && \
+       git remote add rising https://github.com/RisingTechOSS/android_frameworks_native && \
+       git config pull.rebase true && \
+       git pull rising thirteen) && \
+
         # Set up build environment
         export BUILD_USERNAME=${{ github.actor }} ; \
         export BUILD_HOSTNAME=crave ; \
